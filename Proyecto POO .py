@@ -1,5 +1,7 @@
 import pandas as pd
 import random
+import tkinter as tk
+
 class user():
     pass
 
@@ -38,7 +40,9 @@ class main():
 class database():
     questionslvl1 = pd.read_csv("preguntas_preprimaria.csv")
 
+
 l = logic()
 d = database()
 
 l.game(d.questionslvl1)
+
