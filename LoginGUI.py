@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter.font import BOLD
 import Login
+import Login
 class loginGUI: 
 
     def __init__(self):
@@ -18,12 +19,16 @@ class loginGUI:
         frame.place(x=480, y =50)
         heading = Label(frame, text="Ingresa a Knower", fg ="#57a1f8", bg="white", font =("Comic sans", 23, BOLD) )
         heading.place(x=85, y=5)
-        heading2 = Label(frame, text="Usuario: ",  fg ="#fff", bg="white", font =("Comic sans", 11, BOLD))
+        heading2 = Label(frame, text="Usuario: ",  fg ="#0a0a0a", bg="white", font =("Comic sans", 11, BOLD))
         heading2.place(x=20, y=80)
         box1 = Entry(frame, width=25, fg="black", border=2,bg = "white", font =("Comic sans", 11) )
         box1.place(x=100,y=80)
-
+        box2 = Entry(frame, width=25, fg="black", border=2,bg = "white", font =("Comic sans", 11))
+        box2.place(x=100, y=150)
+        heading3 = Label(frame, text="Contraseña: ",  fg ="#0a0a0a", bg="white", font =("Comic sans", 11, BOLD))
+        heading3.place(x= 20,y=150)
+        button1 = Button(frame, text ="Comenzar")
+        button1.place(x=120, y=300)
         window.mainloop()
 
 hola = loginGUI()
-hola.__init__()
