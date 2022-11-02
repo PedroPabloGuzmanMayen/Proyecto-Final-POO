@@ -1,6 +1,3 @@
-
-
-
 class Login():
     def login(self, string, string2, list):
         usernameslist = []
@@ -21,5 +18,7 @@ class Login():
             return False
 
         
-    def newAccount(self):
-        pass
+    def newAccount(self, string, string2, boolean, score, db):
+        list = [str(string), str(string2), bool(boolean), int(score)]
+        db.loc[len(db)] = list
+        db.to_excel("users_data", index = False)

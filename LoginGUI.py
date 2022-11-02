@@ -18,6 +18,8 @@ class loginGUI:
                 menu()
             else:
                 messagebox.showerror(message= "El usuario y la contraseña son incorrectos o el usuario no existe ", title="Mensaje de error")
+
+
     def __init__(self):
 
         self.window = Tk()

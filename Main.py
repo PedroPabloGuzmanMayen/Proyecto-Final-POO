@@ -1,3 +1,3 @@
-from LoginGUI import loginGUI
+from SelectLogin import SelectLogin
 
-loginGUI()
+SelectLogin()
