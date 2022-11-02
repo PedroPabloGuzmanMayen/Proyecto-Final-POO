@@ -1,6 +1,8 @@
 from tkinter import *
 from Login import Login
 from tkinter import messagebox
+from LoginGUI import loginGUI
+import pandas as pd
 
 class NewAccount:
     def ButtonEvent(self):
@@ -9,11 +11,12 @@ class NewAccount:
         score0 = 0
         isT = False
         self.log = Login()
-        if self.log.newAccount(us, passw, isT, score0,  ):
+        data = pd.read_excel("users_data.xlsx")
+        if self.log.newAccount(us, passw, isT, score0, data):
             self.window.destroy()
-            self.log
+            loginGUI()
         else:
-            messagebox.showerror(message= "El usuario y la contraseña son incorrectos o el usuario no existe ", title="Mensaje de error")
+            messagebox.showerror(message= "El usuario ya existe ", title="Mensaje de error")
 
     def __init__(self):
         self.window = Tk()
@@ -32,8 +35,8 @@ class NewAccount:
         self.box2.config(show= "*")
         self.box2.grid(row =4,column =100 )
    
-        self.button = Button(self.window, text="Continuar")
+        self.button = Button(self.window, text="Continuar", command=self.ButtonEvent)
         self.button.grid(row=6, column = 100)
         self.window.mainloop()
 
-hola = NewAccount()
+

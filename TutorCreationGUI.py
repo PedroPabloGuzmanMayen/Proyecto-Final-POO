@@ -33,4 +33,3 @@ class createNewTutor:
 
         self.window.mainloop()
 
-hoola = createNewTutor()

@@ -20,15 +20,14 @@ class Login():
         
     def newAccount(self, string, string2, boolean, score, db):
         usernameslist = []
-        for i in list["Username"]:
+        for i in db["Username"]:
             usernameslist.append(i)
         if (string in usernameslist):
-
-            list = [str(string), str(string2), bool(boolean), int(score)]
-            db.loc[len(db)] = list
-            db.to_excel("users_data", index = False)
-            return True
-        else:
             return False
+        else:
+            list1 = [str(string), str(string2), bool(boolean), int(score)]
+            db.loc[len(db)] = list1
+            db.to_excel("users_data.xlsx", index = False)
+            return True
     def newTutor(self):
         pass
