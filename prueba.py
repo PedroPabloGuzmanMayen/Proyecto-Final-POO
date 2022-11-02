@@ -24,7 +24,8 @@ home = Login()
 prueba = input("Ingresa el nombre")
 prueba2 = input("Ingresa la contraseña")
 
-print(home.login(prueba, prueba2, xd))
+if (home.login(prueba, prueba2, xd)):
+    print("wa")
 
 
 lista = []
