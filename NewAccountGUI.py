@@ -16,7 +16,7 @@ class NewAccount:
             self.window.destroy()
             loginGUI()
         else:
-            messagebox.showerror(message= "El usuario ya existe ", title="Mensaje de error")
+            messagebox.showerror(message= "El usuario ya existe ", title="Usuario no existe")
 
     def __init__(self):
         self.window = Tk()

@@ -4,6 +4,7 @@ from tkinter.font import BOLD
 from Login import Login
 from Menu import menu
 import pandas as pd
+from TutorGUI import tutorGUI
 
 class loginGUI: 
 
@@ -14,8 +15,14 @@ class loginGUI:
             self.log = Login()
 
             if self.log.login(user0, pass0,data ):
-                self.window.destroy()
-                menu()
+                if(self.log.isTutor(user0, data)):
+                    self.window.destroy()
+                    tutorGUI()
+
+                else:
+                    self.window.destroy()
+                    menu(user0, self.log.getScore(data, user0))
+                
             else:
                 messagebox.showerror(message= "El usuario y la contraseña son incorrectos o el usuario no existe ", title="Mensaje de error")
 
