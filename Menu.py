@@ -4,6 +4,7 @@ from QuestionGUI import questions
 from GameGUI import game
 from ResoucresGUI import Resources
 from CompareScoreGUI import compareScore
+from ShowTutorsGUI import ShowTutors
 class menu:
 
     def gotToQuestionsGUI(self):
@@ -14,11 +15,13 @@ class menu:
         game()
     def gotToScoreGUI(self):
         self.window.destroy()
-        questions()
-    def goToAddTutorGUI(self):
-        pass
+        compareScore()
     def goToResources(self):
-        pass
+        self.window.destroy()
+        Resources()
+    def goToTutors(self):
+        self.window.destroy()
+        ShowTutors()
 
     def __init__(self, name, score):
         self.user = user()
@@ -31,15 +34,19 @@ class menu:
         self.label = Label(self.window, text= "¿Que quieres hacer?", font =("Arial", 50))
         self.label.pack()
         self.buttonquestions = Button(self.window, text="Juego de preguntas", command = self.gotToQuestionsGUI)
-        self.buttonquestions.place(x =20, y=50)
-        self.buttonscore = Button(self.window, text="Comparar puntaje")
+        self.buttonquestions.place(x =300, y=100)
+        self.buttonscore = Button(self.window, text="Comparar puntaje",command = self.gotToScoreGUI )
+        self.buttonscore.place(x=500, y=100)
         self.buttongame = Button(self.window, text="Juego de habilidad mental")
-        self.buttonresource = Button(self.window, text="Recursos educativos")
-        self.buttontutors = Button(self.window, text="Buscar un tutor")
-
+        self.buttonscore.place(x=300, y=200)
+        self.buttonresource = Button(self.window, text="Recursos educativos", command =self.goToResources)
+        self.buttonresource.place(x=500, y=200)
+        self.buttontutors = Button(self.window, text="Buscar un tutor", command = self.goToTutors)
+        self.buttontutors.place(x=300,y=300 )
         print(self.user.getscore())
         print(self.user.getusername())
         self.window.mainloop()
 
+hola = menu("hola", 500)
 
         

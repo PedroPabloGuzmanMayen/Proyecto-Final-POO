@@ -2,12 +2,12 @@ from tkinter import*
 from tkinter import ttk
 import pandas as pd
 import numpy as np
-class Resources:
+class ShowTutors:
     def __init__(self):
         self.window = Tk()
         self.window.title("Mostrar los recursos educativos")
         self.window.geometry("925x500+300+200")
-        self.mydata = pd.read_excel("Resources.xlsx")
+        self.mydata = pd.read_excel("Tutors.xlsx")
         self.frame = Frame(self.window)
         self.frame.pack(pady =20)
         self.tree = ttk.Treeview(self.frame)
@@ -21,4 +21,3 @@ class Resources:
 
         self.tree.pack()
         self.window.mainloop()
-
