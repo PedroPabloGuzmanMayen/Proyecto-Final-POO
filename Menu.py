@@ -47,6 +47,6 @@ class menu:
         print(self.user.getusername())
         self.window.mainloop()
 
-hola = menu("hola", 500)
+
 
         
