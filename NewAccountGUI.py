@@ -3,7 +3,7 @@ from Login import Login
 from tkinter import messagebox
 from LoginGUI import loginGUI
 import pandas as pd
-
+from AddData import AddData
 class NewAccount:
     def ButtonEvent(self):
         us = self.box1.get()
@@ -11,8 +11,9 @@ class NewAccount:
         score0 = 0
         isT = False
         self.log = Login()
+        self.add = AddData()
         data = pd.read_excel("users_data.xlsx")
-        if self.log.newAccount(us, passw, isT, score0, data):
+        if self.add.newAccount(us, passw, isT, score0, data):
             self.window.destroy()
             loginGUI()
         else:

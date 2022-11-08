@@ -5,7 +5,6 @@ from Login import Login
 from Menu import menu
 import pandas as pd
 from TutorGUI import tutorGUI
-
 class loginGUI: 
 
     def Buttonevent(self):

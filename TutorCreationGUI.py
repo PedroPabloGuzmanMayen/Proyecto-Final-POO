@@ -3,6 +3,7 @@ from tkinter import messagebox
 from Login import Login
 import pandas as pd
 from LoginGUI import loginGUI
+from AddData import AddData
 class createNewTutor:
 
      def addTutor(self):
@@ -14,8 +15,9 @@ class createNewTutor:
         data1 = pd.read_excel("Tutors.xlsx")
         data2 = pd.read_excel("users_data.xlsx")
         self.log = Login()
-        if(self.log.newAccount(user, password, True, 0, data2)):
-                self.log.newTutor(name, phone_number, email, data1)
+        self.add = AddData()
+        if(self.add.newAccount(user, password, True, 0, data2)):
+                self.add.newTutor(name, phone_number, email, data1)
                 self.window.destroy()
                 loginGUI()
         else:
