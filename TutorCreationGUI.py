@@ -1,5 +1,30 @@
-from tkinter import * 
+from tkinter import *
+from tkinter import messagebox
+from Login import Login
+import pandas as pd
+from LoginGUI import loginGUI
 class createNewTutor:
+
+     def addTutor(self):
+        user = self.box1.get()
+        password = self.box2.get()
+        phone_number = self.box3.get()
+        name = self.box4.get()
+        email = self.box5.get()
+        data1 = pd.read_excel("Tutors.xlsx")
+        data2 = pd.read_excel("users_data.xlsx")
+        self.log = Login()
+        if(self.log.newAccount(user, password, True, 0, data2)):
+                self.log.newTutor(name, phone_number, email, data1)
+                self.window.destroy()
+                loginGUI()
+        else:
+                messagebox.showerror(message= "El usuario ya existe ", title="Usuario ya existe")
+        
+
+
+
+
      def __init__(self):
         self.window = Tk()
         self.window.title("Crea tu cuenta")
@@ -27,9 +52,10 @@ class createNewTutor:
         self.box4.grid(row=40, column=100)
         self.label7 =Label(self.window,text="Correo electrónico" )
         self.label7.grid(row = 50, column = 70)
-        self.box4 = Entry(self.window, width=25, fg="black", border=2,bg = "white", font =("Comic sans", 11))
-        self.box4.grid(row=50, column=100)
-    
+        self.box5 = Entry(self.window, width=25, fg="black", border=2,bg = "white", font =("Comic sans", 11))
+        self.box5.grid(row=50, column=100)
+        self.button1 = Button(self.window, text="¡Crear tu cuenta de tutor!", command= self.addTutor)
+        self.button1.grid(row = 70, column = 100)
 
         self.window.mainloop()
 

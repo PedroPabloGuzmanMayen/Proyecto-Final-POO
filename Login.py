@@ -30,8 +30,10 @@ class Login():
             db.loc[len(db)] = list1
             db.to_excel("users_data.xlsx", index = False)
             return True
-    def newTutor(self):
-        pass
+    def newTutor(self, string, string2, string3, db):
+        list1 = [str(string), str(string2), str(string3)]
+        db.loc[len(db)] = list1
+        db.to_excel("Tutors.xlsx", index = False)
     def isTutor(self, string, list):
         usernameslist = []
         userstates = []
