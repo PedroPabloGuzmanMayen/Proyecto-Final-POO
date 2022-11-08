@@ -12,7 +12,3 @@ class tutor(user):
         return self.email
     def setemail(self, email):
         self.email = email
-    def addSource():
-        pass
-    def addTutor():
-        pass
