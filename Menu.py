@@ -9,7 +9,7 @@ class menu:
 
     def gotToQuestionsGUI(self):
         self.window.destroy()
-        questions()
+        questions(self.user)
     def goToGameGUI(self):
         self.window.destroy()
         game()

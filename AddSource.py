@@ -1,9 +1,12 @@
 from tkinter import *
-class AddSource:
+from AddData import AddData
+from AddGUI import AddGUI
+class AddSourceGUI(AddGUI):
 
-    def __init__(self):
-        self.window = Tk()
-        self.window.title("Agrgega un recurso")
-        self.window.geometry("925x500+300+200")
-        self.window.configure(bg = "#fff")
-        self.window.mainloop()
+    def addMaterial(self):
+        self.add = AddData()
+        self.add.newSource(self.box1.get(), self.box3.get(), self.box2.get())
+        self.box1.delete(0, END)
+        self.box2.delete(0, END)
+        self.box3.delete(0, END)
+    

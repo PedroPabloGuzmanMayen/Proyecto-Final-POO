@@ -1,11 +1,12 @@
 from tkinter import*
 from AddTutor import AddTutor
-from AddSource import AddSource
+from AddSource import AddSourceGUI
 class tutorGUI:
-    def gotoAddTutor():
-        AddTutor()
-    def gotoAddSource():
-        AddSource()
+    def gotoAddTutor(self):
+        self.window.destroy()
+        AddTutor("Agregar un tutor", "Nombre del tutor", "Correo del tutor", "Telefono del tutor", "Agregar tutor!")
+    def gotoAddSource(self):
+        AddSourceGUI("Agregar un recurso", "Nombre del recurso", "Nivel del recurso", "Tematica del recurso", "Agregar el recurso!")
     def __init__(self):
         self.window = Tk()
         self.window.title("Select an option")
@@ -18,4 +19,4 @@ class tutorGUI:
         self.button2 = Button(self.window, text = "Agregar recursos", command= self.gotoAddSource)
         self.button2.place(x=500, y=200)
         self.window.mainloop()
-
+tutorGUI()
