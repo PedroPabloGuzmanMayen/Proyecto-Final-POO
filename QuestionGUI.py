@@ -7,4 +7,6 @@ class questions:
         self.window.geometry("925x500+300+200")
         self.window.configure(bg = "#fff")
         self.window.mainloop()
-        print(self.us.getname())
+        print(self.us.getusername())
+        self.us.setscore(self.us.getscore()+20)
+        print(self.us.getscore())

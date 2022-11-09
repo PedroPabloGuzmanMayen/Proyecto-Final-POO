@@ -19,4 +19,4 @@ class tutorGUI:
         self.button2 = Button(self.window, text = "Agregar recursos", command= self.gotoAddSource)
         self.button2.place(x=500, y=200)
         self.window.mainloop()
-tutorGUI()
+

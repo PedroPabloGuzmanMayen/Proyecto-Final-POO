@@ -43,8 +43,6 @@ class menu:
         self.buttonresource.place(x=500, y=200)
         self.buttontutors = Button(self.window, text="Buscar un tutor", command = self.goToTutors)
         self.buttontutors.place(x=300,y=300 )
-        print(self.user.getscore())
-        print(self.user.getusername())
         self.window.mainloop()
 
 
