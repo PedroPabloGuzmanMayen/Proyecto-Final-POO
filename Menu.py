@@ -45,6 +45,6 @@ class menu:
         self.buttontutors.place(x=300,y=300 )
         self.window.mainloop()
 
-Menu()
+
 
         
