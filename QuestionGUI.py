@@ -12,7 +12,7 @@ class questions:
         self.question_list.clear()
         if (str(self.answer.get()) == str(self.questions.iloc[self.numb]["Answer"])):
             messagebox.showerror(message= "Respuesta correcta", title="Respuesta correcta")
-            self.add.addScore(self.us.getusername())
+            self.add.addScore(self.us.getusername(), 5)
         else:
             messagebox.showerror(message= "Respuesta incorrecta", title="Respuesta inccorrecta")
         questions(self.us)
@@ -45,11 +45,12 @@ class questions:
         self.window.geometry("925x500+300+200")
         self.window.configure(bg = "#fff")
         self.window.mainloop()
-        self.us.setscore(self.us.getscore()+20)
+       
    
 us = user()
-us.setscore(0)
+
 us.setusername("dalas")
+us.setscore(20)
 questions(us)
 
 

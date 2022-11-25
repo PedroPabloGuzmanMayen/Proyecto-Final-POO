@@ -5,6 +5,7 @@ from GameGUI import game
 from ResoucresGUI import Resources
 from CompareScoreGUI import compareScore
 from ShowTutorsGUI import ShowTutors
+from DiagnosisGUI import diagnosis
 class menu:
 
     def gotToQuestionsGUI(self):
@@ -12,7 +13,7 @@ class menu:
         questions(self.user)
     def goToGameGUI(self):
         self.window.destroy()
-        game()
+        diagnosis(self.user, 0)
     def gotToScoreGUI(self):
         self.window.destroy()
         compareScore()
