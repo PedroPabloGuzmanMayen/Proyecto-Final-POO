@@ -38,7 +38,7 @@ class loginGUI:
 
         self.frame = Frame(self.window, width=350, height=390, bg="red")
         self.frame.place(x=480, y =50)
-        self.heading = Label(self.frame, text="Ingresa a Knower", fg ="#57a1f8", bg="white", font =("Comic sans", 23, BOLD) )
+        self.heading = Label(self.frame, text="Ingresa a Epistemas", fg ="#57a1f8", bg="white", font =("Comic sans", 23, BOLD) )
         self.heading.place(x=85, y=5)
         self.heading2 = Label(self.frame, text="Usuario: ",  fg ="#0a0a0a", bg="white", font =("Comic sans", 11, BOLD))
         self.heading2.place(x=20, y=80)

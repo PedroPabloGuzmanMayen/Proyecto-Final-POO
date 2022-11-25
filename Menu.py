@@ -1,7 +1,6 @@
 from tkinter import *
 from user import user
 from QuestionGUI import questions
-from GameGUI import game
 from ResoucresGUI import Resources
 from CompareScoreGUI import compareScore
 from ShowTutorsGUI import ShowTutors
