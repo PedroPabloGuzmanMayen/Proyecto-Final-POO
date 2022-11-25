@@ -60,9 +60,9 @@ print(adios.loc[numero]["Answer"])
 '''
 
 hola = pd.read_excel("users_data.xlsx")
-idx = hola.index[hola["Username"] == "adios"].tolist()
+idx = hola.index[hola["Username"] == "Lampara"].tolist()
 print(idx[0])
-hola.at[idx[0],"Username"] = "Lampara"
+hola.at[idx[0],"Score"] = 600
 print(hola.loc[idx])
 hola.to_excel("users_data.xlsx", index = False)
 

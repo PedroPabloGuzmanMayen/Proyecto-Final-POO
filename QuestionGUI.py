@@ -12,7 +12,7 @@ class questions:
         self.question_list.clear()
         if (str(self.answer.get()) == str(self.questions.iloc[self.numb]["Answer"])):
             messagebox.showerror(message= "Respuesta correcta", title="Respuesta correcta")
-            self.add.addScore(self.us.getusername,self.us.getscore)
+            self.add.addScore(self.us.getusername())
         else:
             messagebox.showerror(message= "Respuesta incorrecta", title="Respuesta inccorrecta")
         questions(self.us)
@@ -23,8 +23,6 @@ class questions:
         self.add = AddData()
         self.questions = self.add.getQuestions(self.us.getscore())
         self.numb = random.randint(0, len(self.questions)-1)
-        print(len(self.questions))
-        print(self.numb)
         self.question_list = []
         self.question_list.append(self.questions.iloc[self.numb]["Answer"])
         self.question_list.append(self.questions.iloc[self.numb]["Option1"])
@@ -42,18 +40,17 @@ class questions:
         for i in range(len(self.question_list)):
             self.radiob = Radiobutton(self.window, text = self.question_list[i], variable = self.answer, value = str(self.question_list[i]), command=self.nextButton)
             self.radiob.pack()
-        print(self.answer)
-        print(self.questions.iloc[self.numb]["Answer"])
         #self.nextbutton = Button(self.window, text="Siguiente", command= self.nextButton)
         #self.nextbutton.place(x=425, y =300)
         self.window.geometry("925x500+300+200")
         self.window.configure(bg = "#fff")
         self.window.mainloop()
-        print(self.us.getusername())
         self.us.setscore(self.us.getscore()+20)
    
-
-        print(self.us.getscore())
+us = user()
+us.setscore(0)
+us.setusername("dalas")
+questions(us)
 
 
     

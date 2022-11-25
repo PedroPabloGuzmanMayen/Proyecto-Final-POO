@@ -37,9 +37,12 @@ class AddData:
 
         return questions
 
-    def addScore(self, name, score):
+    def addScore(self, name):
         data = pd.read_excel("users_data.xlsx")
         idx = data.index[data["Username"] == name].tolist()
-        data.at[idx[0],"Score"] = int(score)+5
-        idx.clear()
+        print(name)
+    
+        number = int(idx[0])
+        data.at[int(number),"Score"] = data.iloc[int(number)]["Score"] +5
+        #idx.clear()
         data.to_excel("users_data.xlsx", index = False)
