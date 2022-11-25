@@ -1,23 +1,27 @@
 from tkinter import *
 from user import user
-from ConfirmationWindow import ConfirmationWindow
+from QuestionGUI import questions
+from GameGUI import game
+from ResoucresGUI import Resources
+from CompareScoreGUI import compareScore
+from ShowTutorsGUI import ShowTutors
 class menu:
 
     def gotToQuestionsGUI(self):
         self.window.destroy()
-        ConfirmationWindow(1, self.user)
+        questions(self.user)
     def goToGameGUI(self):
         self.window.destroy()
-        ConfirmationWindow(2, self.user)
+        game()
     def gotToScoreGUI(self):
         self.window.destroy()
-        ConfirmationWindow(3, self.user)
+        compareScore()
     def goToResources(self):
         self.window.destroy()
-        ConfirmationWindow(4, self.user)
+        Resources()
     def goToTutors(self):
         self.window.destroy()
-        ConfirmationWindow(5, self.user)
+        ShowTutors()
 
     def __init__(self, name, score):
         self.user = user()

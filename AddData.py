@@ -40,6 +40,6 @@ class AddData:
     def addScore(self, name, score):
         data = pd.read_excel("users_data.xlsx")
         idx = data.index[data["Username"] == name].tolist()
-        data.at[idx[0],"Score"] = score+5
+        data.at[idx[0],"Score"] = int(score)+5
         idx.clear()
         data.to_excel("users_data.xlsx", index = False)

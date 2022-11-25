@@ -12,6 +12,7 @@ class questions:
         self.question_list.clear()
         if (str(self.answer.get()) == str(self.questions.iloc[self.numb]["Answer"])):
             messagebox.showerror(message= "Respuesta correcta", title="Respuesta correcta")
+            self.add.addScore(self.us.getusername,self.us.getscore)
         else:
             messagebox.showerror(message= "Respuesta incorrecta", title="Respuesta inccorrecta")
         questions(self.us)
@@ -60,7 +61,3 @@ class questions:
 
 
 
-hola = user()
-hola.setusername("adios")
-hola.setscore(500)
-questions(hola)
