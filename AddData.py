@@ -32,7 +32,7 @@ class AddData:
             questions = globalquestions[globalquestions.Level == 2]
         if (1000 < score <= 1500):
             questions = globalquestions[globalquestions.Level == 3]
-        if (1500 < score <=2000):
+        if (1500 < score ):
             questions = globalquestions[globalquestions.Level == 4]
 
         return questions
