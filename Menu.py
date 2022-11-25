@@ -38,7 +38,7 @@ class menu:
         self.buttonquestions.place(x =300, y=100)
         self.buttonscore = Button(self.window, text="Comparar puntaje",command = self.gotToScoreGUI )
         self.buttonscore.place(x=500, y=100)
-        self.buttongame = Button(self.window, text="Juego de habilidad mental")
+        self.buttongame = Button(self.window, text="Examen diagnóstico")
         self.buttonscore.place(x=300, y=200)
         self.buttonresource = Button(self.window, text="Recursos educativos", command =self.goToResources)
         self.buttonresource.place(x=500, y=200)

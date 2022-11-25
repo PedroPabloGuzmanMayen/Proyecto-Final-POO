@@ -33,7 +33,6 @@ class diagnosis:
         self.question_list.append(self.questions.iloc[self.numb]["Option1"])
         self.question_list.append(self.questions.iloc[self.numb]["Option2"])
         self.question_list.append(self.questions.iloc[self.numb]["Option3"])
-        self.label = Label(self.window, text=self.questions.iloc[self.numb]["Question"], font =("Arial", 35))
         self.label.pack()
         random.shuffle(self.question_list)
         self.window.title("Examen diagnóstico")
