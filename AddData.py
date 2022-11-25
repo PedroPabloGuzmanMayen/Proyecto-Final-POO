@@ -23,3 +23,16 @@ class AddData:
         list1 = [str(string), str(string2), int(level)]
         db.loc[len(db)] = list1
         db.to_excel("Resources.xlsx", index = False)
+
+    def getQuestions(self, score):
+        globalquestions = pd.read_excel("Questions.xlsx")
+        if (score <= 500):
+            questions = globalquestions[globalquestions.Level == 1]
+        if ( 500 < score <= 1000):
+            questions = globalquestions[globalquestions.Level == 2]
+        if (1000 < score <= 1500):
+            questions = globalquestions[globalquestions.Level == 3]
+        if (1500 < score <=2000):
+            questions = globalquestions[globalquestions.Level == 4]
+
+        return questions

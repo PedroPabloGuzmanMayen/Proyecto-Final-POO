@@ -18,7 +18,7 @@ class hello:
         self.button.pack()
         self.window.mainloop()
 hello()
-'''
+
 
 list = [1,2,3,4]
 
@@ -48,3 +48,15 @@ hola.at[4, "Option1"] = adios
 tankev = hola["Option1"].sample()
 
 hola.to_excel("Resources.xlsx", index = False)
+##########
+
+hola = pd.read_excel("Questions.xlsx")
+
+adios = hola[hola.Level == 1]
+numero = random.randint(0,6)
+muuu = adios.sample()
+print(adios.loc[numero]["Answer"])
+
+'''
+
+

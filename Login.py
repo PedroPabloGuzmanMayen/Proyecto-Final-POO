@@ -39,5 +39,6 @@ class Login():
             userscores.append(int(i))
         index = usernameslist.index(string)
         return userscores[index]
-
+    def saveScore():
+        pass
 
